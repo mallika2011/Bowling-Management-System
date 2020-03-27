@@ -1,6 +1,6 @@
 /**
  * 
- * SMTP implementation based on code by Réal Gagnon mailto:real@rgagnon.com
+ * SMTP implementation based on code by Real Gagnon mailto:real@rgagnon.com
  * 
  */
 
