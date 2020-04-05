@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="806.0768518518519" y="897.0">NewPatronView</node>
+    <node x="283.0" y="227.0">Party</node>
+    <node x="387.8597222222221" y="0.0">ControlDeskEvent</node>
+    <node x="168.81805555555553" y="454.0">ControlDesk</node>
+    <node x="498.0" y="252.0">ControlDeskObserver</node>
+    <node x="565.8333333333334" y="1552.0">AddPartyView</node>
+    <node x="393.07685185185187" y="1041.0">ControlDeskView</node>
+    <node x="0.0" y="155.0">Bowler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ControlDeskObserver" target="ControlDeskEvent">
+      <point x="0.0" y="-27.5" />
+      <point x="694.5" y="135.0" />
+      <point x="534.1097222222221" y="135.0" />
+      <point x="29.25" y="52.5" />
+    </edge>
+    <edge source="ControlDesk" target="Bowler">
+      <point x="-128.33333333333343" y="-196.5" />
+      <point x="194.4847222222221" y="429.0" />
+      <point x="188.25" y="429.0" />
+      <point x="62.75" y="124.5" />
+    </edge>
+    <edge source="AddPartyView" target="NewPatronView">
+      <point x="36.77777777777783" y="-256.5" />
+      <point x="768.1111111111112" y="1502.0" />
+      <point x="842.8268518518519" y="1502.0" />
+      <point x="-110.25" y="292.5" />
+    </edge>
+    <edge source="ControlDeskView" target="ControlDesk">
+      <point x="-147.375" y="-148.5" />
+      <point x="442.20185185185187" y="877.0" />
+      <point x="245.81805555555553" y="877.0" />
+      <point x="-77.0" y="196.5" />
+    </edge>
+    <edge source="ControlDesk" target="Party">
+      <point x="76.99999999999994" y="-196.5" />
+      <point x="399.8180555555555" y="429.0" />
+      <point x="429.25" y="429.0" />
+      <point x="48.75" y="52.5" />
+    </edge>
+    <edge source="AddPartyView" target="ControlDeskView">
+      <point x="-73.55555555555554" y="-256.5" />
+      <point x="657.7777777777778" y="1512.0" />
+      <point x="540.4518518518519" y="1512.0" />
+      <point x="-49.125" y="148.5" />
+    </edge>
+    <edge source="ControlDeskView" target="ControlDeskEvent">
+      <point x="147.375" y="-148.5" />
+      <point x="736.9518518518519" y="877.0" />
+      <point x="901.5" y="877.0" />
+      <point x="901.5" y="125.0" />
+      <point x="592.6097222222221" y="125.0" />
+      <point x="87.75" y="52.5" />
+    </edge>
+    <edge source="AddPartyView" target="Bowler">
+      <point x="-147.11111111111103" y="-256.5" />
+      <point x="584.2222222222224" y="1532.0" />
+      <point x="62.75" y="1532.0" />
+      <point x="-62.75" y="124.5" />
+    </edge>
+    <edge source="ControlDesk" target="ControlDeskObserver">
+      <point x="128.33333333333331" y="-196.5" />
+      <point x="451.15138888888885" y="429.0" />
+      <point x="596.25" y="429.0" />
+      <point x="-98.25" y="27.5" />
+    </edge>
+    <edge source="NewPatronView" target="AddPartyView">
+      <point x="110.25" y="292.5" />
+      <point x="1063.3268518518519" y="1532.0" />
+      <point x="878.4444444444445" y="1532.0" />
+      <point x="147.1111111111111" y="-256.5" />
+    </edge>
+    <edge source="ControlDeskView" target="ControlDeskObserver">
+      <point x="49.125" y="-148.5" />
+      <point x="638.7018518518519" y="867.0" />
+      <point x="792.75" y="867.0" />
+      <point x="98.25" y="27.5" />
+    </edge>
+    <edge source="ControlDesk" target="ControlDeskEvent">
+      <point x="-77.00000000000006" y="-196.5" />
+      <point x="245.81805555555547" y="429.0" />
+      <point x="261.5" y="429.0" />
+      <point x="261.5" y="125.0" />
+      <point x="417.1097222222221" y="125.0" />
+      <point x="-87.75" y="52.5" />
+    </edge>
+    <edge source="ControlDeskView" target="AddPartyView">
+      <point x="49.125" y="148.5" />
+      <point x="638.7018518518519" y="1502.0" />
+      <point x="694.5555555555557" y="1502.0" />
+      <point x="-36.777777777777715" y="-256.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="768.0" y="418.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

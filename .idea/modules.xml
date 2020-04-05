@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Bowling-Management-System.iml" filepath="$PROJECT_DIR$/.idea/Bowling-Management-System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bowling-Management-System.iml" filepath="$PROJECT_DIR$/Bowling-Management-System.iml" />
     </modules>
   </component>
 </project>
