@@ -53,7 +53,7 @@ The several arrows in the diagram represent different relationships between the 
     - The ```ControlDeskiew``` class inturn composes the control desk class since without the View provided by the GUI there would be no interface to support the ```ControlDesk```class. 
 
 
-![uml-class-1](/diagram1.png)
+![uml-class-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/diagram1.png)
 
 
 
@@ -86,4 +86,4 @@ The several arrows in the diagram represent different relationships between the 
 - **Compositions**: 
     - The ```Bowler```, ```Pinsetter``` and ```Party``` classes exist only if the ```Lane ```class object exists. That is the ```Lane ```class composes the remaining classes. This is because, if there is a bowler then he must belogn to a lane, likewise if there's a party  it must belong to a lane, if there's a pinsetter it must belong to a lane.
     
-![uml-class-1](/diagram2.png)
+![uml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/diagram2.png)
