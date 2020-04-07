@@ -229,7 +229,6 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
  */
 
 	public void updateNewPatron(NewPatronView newPatron) {
-		newPatron.updateNewPatron(bowlerdb, allBowlers, party, partyList);
 		try {
 			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
 			if ( checkBowler == null ) {
