@@ -83,118 +83,111 @@ class ControlDesk extends Thread {
 	 * Main loop for ControlDesk's thread
 	 * 
 	 */
-	public void run() {
-		while (true) {
-			
-			assignLane();
-			
-			try {
-				sleep(250);
-			} catch (Exception e) {}
-		}
-	}
-		
-
-    /**
-     * Retrieves a matching Bowler from the bowler database.
-     *
-     * @param nickName	The NickName of the Bowler
-     *
-     * @return a Bowler object.
-     *
-     */
-
-
-    /**
-     * Iterate through the available lanes and assign the paties in the wait queue if lanes are available.
-     *
-     */
-
-	public void assignLane() {
-		Iterator it = lanes.iterator();
-
-		while (it.hasNext() && partyQueue.hasMoreElements()) {
-			Lane curLane = (Lane) it.next();
-
-			if (curLane.isPartyAssigned() == false) {
-				System.out.println("ok... assigning this party");
-				curLane.assignParty(((Party) partyQueue.next()));
-			}
-		}
-		publish(new ControlDeskEvent(getPartyQueue()));
-	}
-
-    /**
-     */
-
-	public void viewScores(Lane ln) {
-		// TODO: attach a LaneScoreView object to that lane
-	}
-
-    /**
-     * Creates a party from a Vector of nickNAmes and adds them to the wait queue.
-     *
-     * @param partyNicks	A Vector of NickNames
-     *
-     */
-
-	public void addPartyQueue(Vector partyNicks) {
-		partyQueue.addPartyQueue(partyNicks);
-		publish(new ControlDeskEvent(getPartyQueue()));
-	}
-
-    /**
-     * Returns a Vector of party names to be displayed in the GUI representation of the wait queue.
-	 *
-     * @return a Vecotr of Strings
-     *
-     */
-
-	public Vector getPartyQueue() {
-		return  partyQueue.getPartyQueue();
-	}
-
-    /**
-     * Accessor for the number of lanes represented by the ControlDesk
-     * 
-     * @return an int containing the number of lanes represented
-     *
-     */
-
-	public int getNumLanes() {
-		return numLanes;
-	}
-
-    /**
-     * Allows objects to subscribe as observers
-     * 
-     * @param adding	the ControlDeskObserver that will be subscribed
-     *
-     */
-
-	public void subscribe(ControlDeskObserver adding) {
-		sub.subscribe(adding);
-	}
-
-    /**
-     * Broadcast an event to subscribing objects.
-     * 
-     * @param event	the ControlDeskEvent to broadcast
-     *
-     */
-
-	public void publish(ControlDeskEvent event) {
-		sub.publish(event);
-	}
-
-    /**
-     * Accessor method for lanes
-     * 
-     * @return a HashSet of Lanes
-     *
-     */
-
-	public HashSet getLanes() {
-		return lanes;
-	}
+//	public void run() {
+//		while (true) {
+//
+//			assignLane();
+//
+//			try {
+//				sleep(250);
+//			} catch (Exception e) {}
+//		}
+//	}
+//
+//
+//    /**
+//     * Retrieves a matching Bowler from the bowler database.
+//     *
+//     * @param nickName	The NickName of the Bowler
+//     *
+//     * @return a Bowler object.
+//     *
+//     */
+//
+//
+//    /**
+//     * Iterate through the available lanes and assign the paties in the wait queue if lanes are available.
+//     *
+//     */
+//
+//	public void assignLane() {
+//		Iterator it = lanes.iterator();
+//
+//		while (it.hasNext() && partyQueue.hasMoreElements()) {
+//			Lane curLane = (Lane) it.next();
+//
+//			if (curLane.isPartyAssigned() == false) {
+//				System.out.println("ok... assigning this party");
+//				curLane.assignParty(((Party) partyQueue.next()));
+//			}
+//		}
+//		sub.publish(new ControlDeskEvent(getPartyQueue()));
+//	}
+//
+//    /**
+//     */
+//
+//    /**
+//     * Creates a party from a Vector of nickNAmes and adds them to the wait queue.
+//     *
+//     * @param partyNicks	A Vector of NickNames
+//     *
+//     */
+//
+//	public void addPartyQueue(Vector partyNicks) {
+//		partyQueue.addPartyQueue(partyNicks);
+//		sub.publish(new ControlDeskEvent(getPartyQueue()));
+//	}
+//
+//    /**
+//     * Returns a Vector of party names to be displayed in the GUI representation of the wait queue.
+//	 *
+//     * @return a Vecotr of Strings
+//     *
+//     */
+//
+//	public Vector getPartyQueue() {
+//		return  partyQueue.getPartyQueue();
+//	}
+//
+//    /**
+//     * Accessor for the number of lanes represented by the ControlDesk
+//     *
+//     * @return an int containing the number of lanes represented
+//     *
+//     */
+//
+//	public int getNumLanes() {
+//		return numLanes;
+//	}
+//
+//    /**
+//     * Allows objects to subscribe as observers
+//     *
+//     * @param adding	the ControlDeskObserver that will be subscribed
+//     *
+//     */
+//
+//	public void subscribe(ControlDeskObserver adding) {
+//		sub.subscribe(adding);
+//	}
+//
+//    /**
+//     * Broadcast an event to subscribing objects.
+//     *
+//     * @param event	the ControlDeskEvent to broadcast
+//     *
+//     */
+//
+//
+//    /**
+//     * Accessor method for lanes
+//     *
+//     * @return a HashSet of Lanes
+//     *
+//     */
+//
+//	public HashSet getLanes() {
+//		return lanes;
+//	}
 }
