@@ -229,23 +229,24 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
  */
 
 	public void updateNewPatron(NewPatronView newPatron) {
-		try {
-			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
-			if ( checkBowler == null ) {
-				BowlerFile.putBowlerInfo(
-					newPatron.getNick(),
-					newPatron.getFull(),
-					newPatron.getEmail());
-				bowlerdb = new Vector(BowlerFile.getBowlers());
-				allBowlers.setListData(bowlerdb);
-				party.add(newPatron.getNick());
-				partyList.setListData(party);
-			} else {
-				System.err.println( "A Bowler with that name already exists." );
-			}
-		} catch (Exception e2) {
-			System.err.println("File I/O Error");
-		}
+		newPatron.updateNewPatron(bowlerdb, allBowlers, party, partyList);
+//		try {
+//			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
+//			if ( checkBowler == null ) {
+//				BowlerFile.putBowlerInfo(
+//					newPatron.getNick(),
+//					newPatron.getFull(),
+//					newPatron.getEmail());
+//				bowlerdb = new Vector(BowlerFile.getBowlers());
+//				allBowlers.setListData(bowlerdb);
+//				party.add(newPatron.getNick());
+//				partyList.setListData(party);
+//			} else {
+//				System.err.println( "A Bowler with that name already exists." );
+//			}
+//		} catch (Exception e2) {
+//			System.err.println("File I/O Error");
+//		}
 	}
 
 /**
