@@ -104,22 +104,6 @@ class ControlDesk extends Thread {
      *
      */
 
-//	private Bowler registerPatron(String nickName) {
-//		Bowler patron = null;
-//
-//		try {
-//			// only one patron / nick.... no dupes, no checks
-//
-//			patron = BowlerFile.getBowlerInfo(nickName);
-//
-//		} catch (FileNotFoundException e) {
-//			System.err.println("Error..." + e);
-//		} catch (IOException e) {
-//			System.err.println("Error..." + e);
-//		}
-//
-//		return patron;
-//	}
 
     /**
      * Iterate through the available lanes and assign the paties in the wait queue if lanes are available.
@@ -155,13 +139,6 @@ class ControlDesk extends Thread {
      */
 
 	public void addPartyQueue(Vector partyNicks) {
-//		Vector partyBowlers = new Vector();
-//		for (int i = 0; i < partyNicks.size(); i++) {
-//			Bowler newBowler = registerPatron(((String) partyNicks.get(i)));
-//			partyBowlers.add(newBowler);
-//		}
-//		Party newParty = new Party(partyBowlers);
-//		partyQueue.add(newParty);
 		partyQueue.addPartyQueue(partyNicks);
 		publish(new ControlDeskEvent(getPartyQueue()));
 	}
@@ -174,15 +151,6 @@ class ControlDesk extends Thread {
      */
 
 	public Vector getPartyQueue() {
-//		Vector displayPartyQueue = new Vector();
-//		for ( int i=0; i < ( (Vector)partyQueue.asVector()).size(); i++ ) {
-//			String nextParty =
-//				((Bowler) ((Vector) ((Party) partyQueue.asVector().get( i ) ).getMembers())
-//					.get(0))
-//					.getNickName() + "'s Party";
-//			displayPartyQueue.addElement(nextParty);
-//		}
-//		return displayPartyQueue;
 		return  partyQueue.getPartyQueue();
 	}
 
