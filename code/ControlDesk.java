@@ -121,7 +121,7 @@ class ControlDesk extends Thread {
 				curLane.assignParty(((Party) partyQueue.next()));
 			}
 		}
-		publish(new ControlDeskEvent(getPartyQueue()));
+		sub.publish(new ControlDeskEvent(getPartyQueue()));
 	}
 
     /**
@@ -136,7 +136,7 @@ class ControlDesk extends Thread {
 
 	public void addPartyQueue(Vector partyNicks) {
 		partyQueue.addPartyQueue(partyNicks);
-		publish(new ControlDeskEvent(getPartyQueue()));
+		sub.publish(new ControlDeskEvent(getPartyQueue()));
 	}
 
     /**
@@ -178,9 +178,9 @@ class ControlDesk extends Thread {
      * @param event	the ControlDeskEvent to broadcast
      *
      */
-	public void publish(ControlDeskEvent adding) {
-		sub.publish(adding);
-	}
+//	public void publish(ControlDeskEvent adding) {
+//		sub.publish(adding);
+//	}
 
     /**
      * Accessor method for lanes

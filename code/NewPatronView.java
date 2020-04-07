@@ -152,25 +152,5 @@ public class NewPatronView implements ActionListener {
 	public String getEmail() {
 		return email;
 	}
-
-	public void updateNewPatron(Vector bowlerdb, JList allBowlers, Vector party, JList partyList ){
-		try {
-			Bowler checkBowler = BowlerFile.getBowlerInfo( nick );
-			if ( checkBowler == null ) {
-				BowlerFile.putBowlerInfo(
-						nick,
-						full,
-						email);
-				bowlerdb = new Vector(BowlerFile.getBowlers());
-				allBowlers.setListData(bowlerdb);
-				party.add(nick);
-				partyList.setListData(party);
-			} else {
-				System.err.println( "A Bowler with that name already exists." );
-			}
-		} catch (Exception e2) {
-			System.err.println("File I/O Error");
-		}
-	}
-
+	
 }
