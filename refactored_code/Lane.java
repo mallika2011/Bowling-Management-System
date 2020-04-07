@@ -160,7 +160,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
-	private LaneSubscribe laneSubscribe; 
+	public LaneSubscribe laneSubscribe; 
 
 	/** Lane()
 	 * 
@@ -249,7 +249,7 @@ public class Lane extends Thread implements PinsetterObserver {
 			party = null;
 			partyAssigned = false;
 			
-			publish(lanePublish());
+			laneSubscribe.publish(lanePublish());
 			
 			int myIndex = 0;
 			while (scoreIt.hasNext()){
@@ -413,7 +413,7 @@ public class Lane extends Thread implements PinsetterObserver {
 		curScore[ index - 1] = score;
 		scores.put(Cur, curScore);
 		getScore( Cur, frame );
-		publish( lanePublish() );
+		laneSubscribe.publish( lanePublish() );
 	}
 
 	/** lanePublish()
@@ -581,7 +581,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 */
 	public void pauseGame() {
 		gameIsHalted = true;
-		publish(lanePublish());
+		laneSubscribe.publish(lanePublish());
 	}
 	
 	/**
@@ -589,7 +589,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 */
 	public void unPauseGame() {
 		gameIsHalted = false;
-		publish(lanePublish());
+		laneSubscribe.publish(lanePublish());
 	}
 
 }
