@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="300.0" y="202.0">PinsetterObserver</node>
+    <node x="0.0" y="329.0">Party</node>
+    <node x="292.54166666666663" y="0.0">PinsetterEvent</node>
+    <node x="368.0" y="527.0">Lane</node>
+    <node x="394.0" y="281.0">Pinsetter</node>
+    <node x="591.0" y="305.0">Bowler</node>
+    <node x="194.0" y="293.0">PinSetterView</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Lane" target="Bowler">
+      <point x="76.33333333333331" y="-244.0" />
+      <point x="558.8333333333334" y="497.0" />
+      <point x="779.25" y="497.0" />
+      <point x="62.75" y="64.0" />
+    </edge>
+    <edge source="Lane" target="Pinsetter">
+      <point x="25.444444444444457" y="-244.0" />
+      <point x="507.94444444444446" y="477.0" />
+      <point x="541.5" y="477.0" />
+      <point x="59.0" y="88.0" />
+    </edge>
+    <edge source="PinSetterView" target="PinsetterEvent">
+      <point x="-44.75" y="-76.0" />
+      <point x="238.75" y="177.0" />
+      <point x="335.79166666666663" y="177.0" />
+      <point x="-129.75" y="76.0" />
+    </edge>
+    <edge source="Pinsetter" target="PinsetterObserver">
+      <point x="-44.25" y="-88.0" />
+      <point x="55.66666666666666" y="14.5" />
+    </edge>
+    <edge source="PinsetterObserver" target="PinsetterEvent">
+      <point x="0.0" y="-14.5" />
+      <point x="383.5" y="177.0" />
+      <point x="422.29166666666663" y="177.0" />
+      <point x="-43.25" y="76.0" />
+    </edge>
+    <edge source="Pinsetter" target="PinsetterEvent">
+      <point x="44.25" y="-88.0" />
+      <point x="526.75" y="177.0" />
+      <point x="508.79166666666663" y="177.0" />
+      <point x="43.25" y="76.0" />
+    </edge>
+    <edge source="Lane" target="PinsetterEvent">
+      <point x="101.77777777777777" y="-244.0" />
+      <point x="584.2777777777778" y="507.0" />
+      <point x="852.5" y="507.0" />
+      <point x="852.5" y="177.0" />
+      <point x="595.2916666666666" y="177.0" />
+      <point x="129.75" y="76.0" />
+    </edge>
+    <edge source="Lane" target="PinsetterObserver">
+      <point x="-50.888888888888914" y="-244.0" />
+      <point x="431.6111111111111" y="487.0" />
+      <point x="383.5" y="487.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Lane" target="Party">
+      <point x="-76.33333333333337" y="-244.0" />
+      <point x="406.16666666666663" y="497.0" />
+      <point x="130.5" y="497.0" />
+      <point x="43.5" y="40.0" />
+    </edge>
+    <edge source="PinSetterView" target="PinsetterObserver">
+      <point x="44.75" y="-76.0" />
+      <point x="-55.66666666666666" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="767.5" y="418.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
