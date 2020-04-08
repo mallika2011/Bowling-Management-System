@@ -2,13 +2,13 @@
  *
  *  Version
  *  $Id$
- * 
+ *
  *  Revisions:
  * 		$Log: NewPatronView.java,v $
  * 		Revision 1.3  2003/02/02 16:29:52  ???
  * 		Added ControlDeskEvent and ControlDeskObserver. Updated Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of ControlDesk.
- * 		
- * 
+ *
+ *
  */
 
 /**
@@ -34,16 +34,24 @@ public class NewPatronView implements ActionListener {
 	private JLabel nickLabel, fullLabel, emailLabel;
 	private JTextField nickField, fullField, emailField;
 	private String nick, full, email;
+	private JList partyList, allBowlers;
+	private Vector party, bowlerdb;
 
 	private boolean done;
 
 	private String selectedNick, selectedMember;
-	private AddPartyView addParty;
+//	private AddPartyView addParty;
 
-	public NewPatronView(AddPartyView v) {
+	public NewPatronView(Vector party, JList partyList, JList allBowlers) {
 
-		addParty=v;	
+//		addParty=v;
 		done = false;
+//		party = v.getParty();
+//		partyList=v.getPartyList();
+//		allBowlers=v.getAllBowlers();
+		this.partyList=partyList;
+		this.party=party;
+		this.allBowlers=allBowlers;
 
 		win = new JFrame("Add Patron");
 		win.getContentPane().setLayout(new BorderLayout());
@@ -114,8 +122,8 @@ public class NewPatronView implements ActionListener {
 		// Center Window on Screen
 		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
 		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
+				((screenSize.width) / 2) - ((win.getSize().width) / 2),
+				((screenSize.height) / 2) - ((win.getSize().height) / 2));
 		win.show();
 
 	}
@@ -131,7 +139,7 @@ public class NewPatronView implements ActionListener {
 			full = fullField.getText();
 			email = emailField.getText();
 			done = true;
-			addParty.updateNewPatron( this );
+			updateNewPatron();
 			win.hide();
 		}
 
@@ -152,5 +160,25 @@ public class NewPatronView implements ActionListener {
 	public String getEmail() {
 		return email;
 	}
-	
+
+	public void updateNewPatron() {
+		try {
+			Bowler checkBowler = BowlerFile.getBowlerInfo( nick );
+			if ( checkBowler == null ) {
+				BowlerFile.putBowlerInfo(
+						nick,
+						full,
+						email);
+				bowlerdb = new Vector(BowlerFile.getBowlers());
+				allBowlers.setListData(bowlerdb);
+				party.add(nick);
+				partyList.setListData(party);
+			} else {
+				System.err.println( "A Bowler with that name already exists." );
+			}
+		} catch (Exception e2) {
+			System.err.println("File I/O Error");
+		}
+	}
+
 }

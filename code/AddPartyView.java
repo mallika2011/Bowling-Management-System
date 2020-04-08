@@ -2,22 +2,22 @@
  *
  *  Version:
  * 		 $Id$
- * 
+ *
  *  Revisions:
  * 		$Log: AddPartyView.java,v $
  * 		Revision 1.7  2003/02/20 02:05:53  ???
  * 		Fixed addPatron so that duplicates won't be created.
- * 		
+ *
  * 		Revision 1.6  2003/02/09 20:52:46  ???
  * 		Added comments.
- * 		
+ *
  * 		Revision 1.5  2003/02/02 17:42:09  ???
  * 		Made updates to migrate to observer model.
- * 		
+ *
  * 		Revision 1.4  2003/02/02 16:29:52  ???
  * 		Added ControlDeskEvent and ControlDeskObserver. Updated Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of ControlDesk.
- * 		
- * 
+ *
+ *
  */
 
 /**
@@ -36,7 +36,7 @@ import java.text.*;
 
 /**
  * Constructor for GUI used to Add Parties to the waiting party queue.
- *  
+ *
  */
 
 public class AddPartyView implements ActionListener, ListSelectionListener {
@@ -98,7 +98,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		allBowlers.setFixedCellWidth(120);
 		JScrollPane bowlerPane = new JScrollPane(allBowlers);
 		bowlerPane.setVerticalScrollBarPolicy(
-			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		allBowlers.addListSelectionListener(this);
 		bowlerPanel.add(bowlerPane);
 
@@ -149,8 +149,8 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		// Center Window on Screen
 		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
 		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
+				((screenSize.width) / 2) - ((win.getSize().width) / 2),
+				((screenSize.height) / 2) - ((win.getSize().height) / 2));
 		win.show();
 
 	}
@@ -172,7 +172,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		}
 	}
 	public void newPatronAction(){
-		NewPatronView newPatron = new NewPatronView( this );
+		NewPatronView newPatron = new NewPatronView(party, partyList,allBowlers);
 
 	}
 	public void finishedAction(){
@@ -198,62 +198,61 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		}
 	}
 
-/**
- * Handler for List actions
- * @param e the ListActionEvent that triggered the handler
- */
+	/**
+	 * Handler for List actions
+	 * @param e the ListActionEvent that triggered the handler
+	 */
 
 	public void valueChanged(ListSelectionEvent e) {
 		if (e.getSource().equals(allBowlers)) {
 			selectedNick =
-				((String) ((JList) e.getSource()).getSelectedValue());
+					((String) ((JList) e.getSource()).getSelectedValue());
 		}
 		if (e.getSource().equals(partyList)) {
 			selectedMember =
-				((String) ((JList) e.getSource()).getSelectedValue());
+					((String) ((JList) e.getSource()).getSelectedValue());
 		}
 	}
 
-/**
- * Accessor for Party
- */
-
-	public Vector getNames() {
-		return party;
-	}
-
+///**
+// * Accessor for Party
+// */
+//
+//	public Vector getNames() {
+//		return party;
+//	}
+//
 /**
  * Called by NewPatronView to notify AddPartyView to update
- * 
+ *
  * @param newPatron the NewPatronView that called this method
  */
 
-	public void updateNewPatron(NewPatronView newPatron) {
-		try {
-			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
-			if ( checkBowler == null ) {
-				BowlerFile.putBowlerInfo(
-					newPatron.getNick(),
-					newPatron.getFull(),
-					newPatron.getEmail());
-				bowlerdb = new Vector(BowlerFile.getBowlers());
-				allBowlers.setListData(bowlerdb);
-				party.add(newPatron.getNick());
-				partyList.setListData(party);
-			} else {
-				System.err.println( "A Bowler with that name already exists." );
-			}
-		} catch (Exception e2) {
-			System.err.println("File I/O Error");
-		}
-	}
+//	public void updateNewPatron(NewPatronView newPatron) {
+//		try {
+//			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
+//			if ( checkBowler == null ) {
+//				BowlerFile.putBowlerInfo(
+//					newPatron.getNick(),
+//					newPatron.getFull(),
+//					newPatron.getEmail());
+//				bowlerdb = new Vector(BowlerFile.getBowlers());
+//				allBowlers.setListData(bowlerdb);
+//				party.add(newPatron.getNick());
+//				partyList.setListData(party);
+//			} else {
+//				System.err.println( "A Bowler with that name already exists." );
+//			}
+//		} catch (Exception e2) {
+//			System.err.println("File I/O Error");
+//		}
+//	}
 
-/**
- * Accessor for Party
- */
+	/**
+	 * Accessor for Party
+	 */
 
 	public Vector getParty() {
 		return party;
 	}
-
 }
