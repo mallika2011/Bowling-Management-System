@@ -2,10 +2,10 @@
  *
  *  Version:
  *			$Id$
- * 
+ *
  *  Revisions:
  * 		$Log$
- * 
+ *
  */
 
 /**
@@ -42,7 +42,6 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		this.controlDesk = controlDesk;
 		this.maxMembers = maxMembers;
 		int numLanes = controlDesk.getNumLanes();
-
 
 		win = new JFrame("Control Desk");
 		win.getContentPane().setLayout(new BorderLayout());
@@ -88,7 +87,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		while (it.hasNext()) {
 			Lane curLane = (Lane) it.next();
 			LaneStatusView laneStat = new LaneStatusView(curLane,(laneCount+1));
-			curLane.subscribe(laneStat);
+			curLane.laneSubscribe.subscribe(laneStat);
 			((Pinsetter)curLane.getPinsetter()).subscribe(laneStat);
 			JPanel lanePanel = laneStat.showLane();
 			lanePanel.setBorder(new TitledBorder("Lane" + ++laneCount ));
