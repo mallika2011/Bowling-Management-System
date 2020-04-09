@@ -135,8 +135,10 @@ import java.util.Vector;
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Date;
+import java.util.*;
+import java.io.*;
 
-public class Lane extends Thread implements PinsetterObserver {
+public class Lane extends Thread implements PinsetterObserver, Serializable {
 	private Party party;
 	private Pinsetter setter;
 	private HashMap scores;
@@ -582,6 +584,46 @@ public class Lane extends Thread implements PinsetterObserver {
 	public void pauseGame() {
 		gameIsHalted = true;
 		laneSubscribe.publish(lanePublish());
+
+		String filename = "pausedGame.dat";
+		try {
+			// Read list from file
+			FileInputStream filei = new FileInputStream(filename); 
+			ObjectInputStream in = new ObjectInputStream(filei);
+			List<Lane> list = (ArrayList<Lane>) in.readObject();
+			in.close(); 
+            filei.close(); 
+			
+			// Add this lane to file
+			list.add(this);
+
+			// Write list to file
+			FileOutputStream fileo = new FileOutputStream(filename);
+			ObjectOutputStream out = new ObjectOutputStream(fileo);
+			out.writeObject(list);
+			out.close();
+			fileo.close();
+		}
+		catch (IOException ex) { 
+			try {
+				List<Lane> list = new ArrayList<Lane>();
+				list.add(this);
+
+				// Write list to file
+				FileOutputStream file = new FileOutputStream(filename);
+				ObjectOutputStream out = new ObjectOutputStream(file);
+				out.writeObject(list);
+				out.close();
+				file.close();
+			}
+			catch (Exception e) {
+
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+
 	}
 
 	/**
