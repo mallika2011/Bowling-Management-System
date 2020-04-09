@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="170.0" y="222.0">BowlerFile</node>
+    <node x="0.0" y="296.0">Score</node>
+    <node x="0.0" y="222.0">ControlDesk</node>
+    <node x="184.0" y="148.0">ScoreReport</node>
+    <node x="0.0" y="74.0">ScoreHistoryFile</node>
+    <node x="0.0" y="0.0">ControlDeskSubscribe</node>
+    <node x="0.0" y="148.0">PrintableText</node>
+    <node x="128.0" y="296.0">Queue</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="466.5" y="198.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="113.5" y="0.0">PinsetterObserver</node>
+    <node x="421.0" y="79.0">LaneView</node>
+    <node x="0.0" y="301.0">LaneEvent</node>
+    <node x="255.0" y="79.0">LaneStatusView</node>
+    <node x="219.0" y="153.0">PinsetterEvent</node>
+    <node x="184.0" y="227.0">LaneServer</node>
+    <node x="355.5" y="0.0">LaneObserver</node>
+    <node x="0.0" y="227.0">LaneSubscribe</node>
+    <node x="159.0" y="79.0">Lane</node>
+    <node x="347.0" y="227.0">Pinsetter</node>
+    <node x="0.0" y="153.0">LaneEventInterface</node>
+    <node x="0.0" y="79.0">PinSetterView</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Lane" target="PinsetterObserver">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="LaneStatusView" target="LaneObserver">
+      <point x="36.5" y="-14.5" />
+      <point x="364.5" y="54.0" />
+      <point x="388.5" y="54.0" />
+      <point x="-33.0" y="14.5" />
+    </edge>
+    <edge source="LaneStatusView" target="PinsetterObserver">
+      <point x="-36.5" y="-14.5" />
+      <point x="291.5" y="54.0" />
+      <point x="252.66666666666666" y="54.0" />
+      <point x="55.66666666666666" y="14.5" />
+    </edge>
+    <edge source="LaneView" target="LaneObserver">
+      <point x="0.0" y="-14.5" />
+      <point x="473.0" y="54.0" />
+      <point x="454.5" y="54.0" />
+      <point x="33.0" y="14.5" />
+    </edge>
+    <edge source="PinSetterView" target="PinsetterObserver">
+      <point x="0.0" y="-14.5" />
+      <point x="69.5" y="54.0" />
+      <point x="141.33333333333334" y="54.0" />
+      <point x="-55.66666666666666" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="466.5" y="198.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

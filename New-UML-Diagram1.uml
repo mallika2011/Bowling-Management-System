@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="428.0" y="320.0">ControlDeskEvent</node>
+    <node x="0.0" y="544.0">LaneSubscribe</node>
+    <node x="417.0" y="0.0">Lane</node>
+    <node x="0.0" y="320.0">AddPartyView</node>
+    <node x="184.0" y="444.0">EndGamePrompt</node>
+    <node x="0.0" y="444.0">EndGameReport</node>
+    <node x="209.0" y="172.0">NewPatronView</node>
+    <node x="177.0" y="320.0">Alley</node>
+    <node x="0.0" y="172.0">ControlDesk</node>
+    <node x="393.0" y="172.0">Party</node>
+    <node x="368.0" y="444.0">ControlDeskSubscribe</node>
+    <node x="191.0" y="0.0">ControlDeskObserver</node>
+    <node x="205.0" y="79.0">ControlDeskView</node>
+    <node x="184.0" y="544.0">drive</node>
+    <node x="0.0" y="0.0">Bowler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ControlDeskView" target="ControlDeskObserver">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="466.5" y="384.0" />
+  <SelectedNodes>
+    <node>ControlDeskSubscribe</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

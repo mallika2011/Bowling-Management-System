@@ -224,9 +224,9 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 	 * Accessor for Party
 	 */
 
-	public Vector getNames() {
-		return party;
-	}
+//	public Vector getNames() {
+//		return party;
+//	}
 
 	/**
 	 * Called by NewPatronView to notify AddPartyView to update
