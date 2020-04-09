@@ -23,7 +23,7 @@ import java.util.*;
 
 public class ControlDeskView implements ActionListener, ControlDeskObserver {
 
-	private JButton addParty, finished, assign;
+	private JButton addParty, finished, assign, searchDB;
 	private JFrame win;
 	private JList partyList;
 	
@@ -75,6 +75,13 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		finished.addActionListener(this);
 		finishedPanel.add(finished);
 		controlsPanel.add(finishedPanel);
+
+		searchDB = new JButton("searchDB");
+		JPanel searchDBPanel = new JPanel();
+		searchDBPanel.setLayout(new FlowLayout());
+		searchDB.addActionListener(this);
+		searchDBPanel.add(searchDB);
+		controlsPanel.add(searchDBPanel);
 
 		// Lane Status Panel
 		JPanel laneStatusPanel = new JPanel();
@@ -153,6 +160,9 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		if (e.getSource().equals(finished)) {
 			win.hide();
 			System.exit(0);
+		}
+		if (e.getSource().equals(searchDB)) {
+			SearchableView searchableView = new SearchableView();
 		}
 	}
 
