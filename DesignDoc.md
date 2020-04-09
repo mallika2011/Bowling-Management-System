@@ -1,9 +1,5 @@
 # **I. BOWLING MANAGEMENT SYSTEM - DESIGN DOCUMENT** :
 
-Title information, including the name of the project, the date of
-submission, a list of all the team members, effort (number of hours)
-put in by each team member, role played by each team member.
-
 **Title :** Bowling Management System
 **Date of Submission :** April 9, 2020
 
@@ -11,13 +7,13 @@ put in by each team member, role played by each team member.
 
 |SNo.| Team Member | Hours of Work | Contributions  |
 |------------|------------|------------|------------|
-|1.|Mallika Subramanian|1234| <ul><li>Refactoring to reduce cyclometric complexity</li> <li>Increasing cohesion amongst classes and methods</li><li>Analysing and identifying responsibilites of major classes as well as the interlinked classes.</li><li>Creating UML class and sequence diagrams for the original as well as refactored code</li><ul>|
-|2.|Aryaman Jain|1234| <ul><li>Refactoring to reduce cyclometric complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries</li><ul>|
-|3.|E Nikhil|1234| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume and save/quit feature</li><ul>|
+|1.|Mallika Subramanian|1234| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Increasing cohesion amongst classes and methods</li><li>Analysing and identifying responsibilites of major classes as well as the interlinked classes.</li><li>Creating UML class and sequence diagrams for the original as well as refactored code</li><ul>|
+|2.|Aryaman Jain|1234| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries and the save-quit and restart feature.</li><ul>|
+|3.|E Nikhil|1234| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume</li><li>Creating Sequence diagrams</li><ul>|
 
 # **II. BRIEF OVERVIEW** :
 
-The Bowling Management System is a game that is entirely developed in Java. It is a virtual game that enables players to enjoy the fun of bowling from their laptops. The game similates several features that add to the overall appeal of the game. Some of the significant features included in the game are : 
+The Bowling Management System is a game that is entirely developed in Java. It is a virtual game that enables players to enjoy the fun of bowling from their laptops. The game simulates several features that add to the overall appeal of the game. Some of the significant features included in the game are : 
 
 * Control Desk : The control desk operator has the ability to monitor the scores of any active lane. A configurable display option will allow the operator to view the score of an individual scoring station or multiple scoring stations.
 
@@ -39,11 +35,11 @@ There are several relationships exhibited by the different member classes that m
 
 1. Association : Shows a relationship between the two classes. One of the classes may have objects of another class being used within it. This is shown by a bold arrow line.
 
-2. Dependency : In some cases it can also show a dependency between two or more classes. Any changes made to a class may cause changes in the class that is dependent on it. This is shown by a dotted arrow line.
+2. Dependency : In some cases it can also show a dependency between two or more classes. Any changes made to a class may cause changes in the class that is dependent on it.
 
 2. Composition: This depicts the relationship between two classes where one class "is entirely made of another class" ie: One of the classes cannot exist if the parent/main class object doesn't exist. This is represented by an arrow with a darkened diamond at the end of the parent class.
 
-3. Aggregation : This resembles the "part of" relationship between 2 classes. ie : One class is "a part" of another class. Here both the classes 
+3. Aggregation : This resembles the "part of" relationship between 2 classes. ie : One class is "a part" of another class.
 
 4. Generalization : This is used one one class generalises the functionalities of all its subclasses. That is it is an umbrella class for other classes which inherit all properties from the parent as well have some other specifi properties unique to them.
 
@@ -186,12 +182,9 @@ The diagram follows a *KEY* that represents the changes and modifications that w
 
 ![newuml-class-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/New-UML-Diagram1.png)
 
-
-
 **B. Fucntionality : Simulating a Ballthrow and observing corresponding changes in the Score and PinsetterView**
 
 ![newuml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/New-UML-Diagram2.png)
-
 
 **C. Fucntionality : Scoring the game and maintaing a queue of the various parties**
 
@@ -204,7 +197,7 @@ The diagram follows a *KEY* that represents the changes and modifications that w
 Below are the sequence diagrams that depict the flow of the various functionalities incorporated into the game. The sequence diagrams have been drawn for both the *original* and the *refactored* code and hence have subtle differences in their major control flow. 
 
 **BEFORE REFACTORING**
-![uml-seq-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
+![uml-seq-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Seq_diagram_before.png)
 
 **AFTER REFACTORING**
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Seq_diagram_after.png)
