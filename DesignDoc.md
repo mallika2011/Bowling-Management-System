@@ -221,7 +221,7 @@ The Bowling Management System codebase has a collection of a total of 29 files. 
 
 # VIII) ANALYZING THE REFACTORED DESIGN
 
-# IX) Metric Analysis
+# IX) METRIC ANALYSIS
 
 The following questions have been answered in this section : 
 
