@@ -165,22 +165,22 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 			}
 		}
 	}
-	public void remPatronAction(){
-		if (selectedMember != null) {
-			party.removeElement(selectedMember);
-			partyList.setListData(party);
-		}
-	}
-	public void newPatronAction(){
-		NewPatronView newPatron = new NewPatronView(this);
-
-	}
-	public void finishedAction(){
-		if ( party != null && party.size() > 0) {
-			controlDesk.updateAddParty( this );
-		}
-		win.hide();
-	}
+//	public void remPatronAction(){
+//		if (selectedMember != null) {
+//			party.removeElement(selectedMember);
+//			partyList.setListData(party);
+//		}
+//	}
+//	public void newPatronAction(){
+//		NewPatronView newPatron = new NewPatronView(this);
+//
+//	}
+//	public void finishedAction(){
+//		if ( party != null && party.size() > 0) {
+//			controlDesk.updateAddParty( this );
+//		}
+//		win.hide();
+//	}
 
 
 	public void actionPerformed(ActionEvent e) {
@@ -188,13 +188,19 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 			addPatronAction();
 		}
 		if (e.getSource().equals(remPatron)) {
-			remPatronAction();
+			if (selectedMember != null) {
+				party.removeElement(selectedMember);
+				partyList.setListData(party);
+			}
 		}
 		if (e.getSource().equals(newPatron)) {
-			newPatronAction();
+			NewPatronView newPatron = new NewPatronView(this);
 		}
 		if (e.getSource().equals(finished)) {
-			finishedAction();
+			if ( party != null && party.size() > 0) {
+				controlDesk.updateAddParty( this );
+			}
+			win.hide();
 		}
 	}
 
