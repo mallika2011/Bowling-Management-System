@@ -1,4 +1,4 @@
-# I. BOWLING MANAGEMENT SYSTEM - DESIGN DOCUMENT :
+# **I. BOWLING MANAGEMENT SYSTEM - DESIGN DOCUMENT** :
 
 Title information, including the name of the project, the date of
 submission, a list of all the team members, effort (number of hours)
@@ -15,7 +15,7 @@ put in by each team member, role played by each team member.
 |2.|Aryaman Jain|1234| <ul><li>Refactoring to reduce cyclometric complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries</li><ul>|
 |3.|E Nikhil|1234| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume and save/quit feature</li><ul>|
 
-# II. BRIEF OVERVIEW :
+# **II. BRIEF OVERVIEW** :
 
 The Bowling Management System is a game that is entirely developed in Java. It is a virtual game that enables players to enjoy the fun of bowling from their laptops. The game similates several features that add to the overall appeal of the game. Some of the significant features included in the game are : 
 
@@ -31,7 +31,7 @@ The Bowling Management System is a game that is entirely developed in Java. It i
 
 * Maintenance Call : This is essentially a simulation of some repair work  – ball not returned, pinsetter did not re-rack, etc.– that is to take place for a particular lane. The game play is halted for the time the lane is being repaired. 
  
-# III. UML CLASS DIAGRAMS (Before Refactoring) :
+# **III. UML CLASS DIAGRAMS (Before Refactoring)** :
 
 Below are UML diagrams describing some of the major functionalities of the game.
 
@@ -169,7 +169,7 @@ The several arrows in the diagram represent different relationships between the 
 
 
 
-# IV. UML CLASS DIAGRAMS (After refactoring)
+# **IV. UML CLASS DIAGRAMS (After refactoring)**
 
 Below are UML diagrams describing the same major functionalities of the game mentioned in the previous section.
 
@@ -199,7 +199,7 @@ The diagram follows a *KEY* that represents the changes and modifications that w
 
 
 
-# V. SEQUENCE DIAGRAMS : 
+# **V. SEQUENCE DIAGRAMS** : 
 
 Below are the sequence diagrams that depict the flow of the various functionalities incorporated into the game. The sequence diagrams have been drawn for both the *original* and the *refactored* code and hence have subtle differences in their major control flow. 
 
@@ -210,7 +210,7 @@ Below are the sequence diagrams that depict the flow of the various functionalit
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
 
 
-# VI. SUMMARY OF RESPONSIBILITIES OF EACH MAJOR CLASS : 
+# **VI. SUMMARY OF RESPONSIBILITIES OF EACH MAJOR CLASS** : 
 
 The Bowling Management System codebase has a collection of a total of 29 files. Each file has a collection of classes and funcitons that help simulate the entire game.
 *Here is a list of all the files and their corresponding characteristics:*
@@ -247,9 +247,40 @@ The Bowling Management System codebase has a collection of a total of 29 files. 
 |28.| ScoreHistoryFile | <ul><li>Vector getScores(string nick)</li><li>void addScore()</li></ul> | <ul><li>String SCOREHISTORY_DAT</li></ul>  |<ul><li>Writes the scores of the playes into a .DAT file after a game finishes. Makes use of I/O options, reading/writing to a buffer etc</li></ul> |<ul><li>------</li></ul> |
 |29.| ScoreReport | <ul><li>void sendEmail()</li><li>void sendPrintout()</li><li>void sendln()</li></ul> | <ul><li>String content</li></ul>  |<ul><li>Generates the ScoreReport and sends it via email/printout to the user.</li></ul> |<ul><li>Bowler</li></ul> |
 
-# VII. ANALYZING THE ORIGINAL DESIGN :
+# **VII. ANALYZING THE ORIGINAL DESIGN** :
 
-# VIII. CODE SMELLS
+As mentioned in the design document provided to us with the codebase, most features and functionalities are in line with the document. <br>
+The only feature that has not been implemented is the system to *Email the score report to the player.*
+
+Below is an analysis of the design of the original code : 
+
+* **Design analysis *Within* Classes**
+
+  * **Comments :** The given code is well commented and enables a new coder to easily understand the codebase. 
+
+  * **Long Method:** Some files such as ```Lane.java``` have functions that and are too long and hence have high cylcomatic complexity. This is a drawback in the design.
+
+  * **Long Parameter List:** The ```LaneEvent.java``` file has a long parameterlist, this is undersirable since it makes the code more complex.
+
+  * **Duplicate Code:** A few functions are redundant, they perform the same tasks and hence one of the redundant methods can be removed. 
+
+  * **Inconsisten/Uncommunicative names:** The code makes use of intuitive function names and instance declarations which makes it easier for a person reading the codebase for the first time to navigate through the different files.
+
+  * **Conditional Complexity**: Several files such as ```Lane.java```, ```LaneEvent.java```, ```LaneStatusView.java``` etc have high conditional complexity. These can be improved upon. 
+
+  * **Speculative generalization and Dead Code:** There exist some chunks of dead code that have been left in the codebase with the intention to complete them later. These add to the LOC, and make the code less readable. Hence it is best to remove them.
+
+* **Design Analysis *Between* Classes**
+
+  * **Indecent Exposure:** Classes like the ```ControlDesk``` are subject to this codesmell wherein they have functions that expose themselves to the class where they arent even required. 
+
+  * **Feature Envy:** Certain methods from ```ControlDesk``` can be moved into other classes wherein they are more extensively used. For Eg: the Queue related functions can be moved to the ```Queue.java``` file.
+
+  * **Primitive Obsession:** Objects and datatypes such as the ```JButton``` are written and rewritten again and again. This causes it to become extremely complex. This can be fixed by writing a class for the same.
+
+
+
+# **VIII. CODE SMELLS**
 
 |SNo.| File/Class Name | Code Smells and their instances |
 |----|-----|----------------|
@@ -262,9 +293,57 @@ The Bowling Management System codebase has a collection of a total of 29 files. 
 |7.| NewPatronView | <ol><li>Primitive Obsession & Combinatiorial Explosion: The *JPanel* objects are initialized multiple times in this class. This causes the same code to be written multiple times. Instead a class should be created for this:<ul><li>*nickPanel*</li><li>*fullPanel*</li><li>*emailPanel*</li></ul></li></ol>|
 |8.| Score | <ol><li>Comments-Irrelevant information is provided in the code, not pertaining to the explanation or functioning of the class.</li></ul></li></ol>|
 
-# IX. ANALYZING THE REFACTORED DESIGN
+# **IX. ANALYZING THE REFACTORED DESIGN**
 
-# X. METRIC ANALYSIS
+Our refactored design reflects a balance among competing criteria. Whilst refactoring our code, we understood that writing good quality code is to some level a bargain between these several parameters. It is essential that some metrics take a lower value however that may reflect in some other metric shooting up. Hence striking the right balance is essential. 
+
+There were several paramters that we had taken into consideration while we refactored the code that was provided to us. Here is an indepth analysis of how we chose between the metrics to be finetuned and the steps taken to achieve the same.
+
+* **Low Coupling**:
+
+  We started off with a total of 29 classes (quite a huge number in iteself). As we went on to increase the functionalities and extend the project, we observed that there were more classes required. Since this was a dire requirement and couldn't be overlooked we had to ensure that the coupling between these class is low. 
+  
+  Low coupling is often a sign of a well-structured computer system. Hence the refactored code includes as few dependencies as possible. We trie to keep the newer classes as standalone classes (such that they arent dependent on other classes). Furthermore, the existing dependencies between classes was also lowered. A major factor that is affected when coupling becomes high is the idea of *Data Abstraction*. If classes freely access the members of other classes, then the whole point of data-hiding is lost. Hence we took care of this by shifting those functions to the classes in which they are most suitable from where they were initially placed (Eg : ```updateNewPatron``` was shifted into the ```NewPatronView``` class).
+
+  Overall we were successfully able to ensure that on an average amongst all our classes, there exists a low value for the **Coupling metric**
+
+* **High Cohesion** :
+
+  Cohesion is used to indicate the degree to which a class has a single, well-focused purpose. Here we focused on how individually classes are designed. Highly cohesive classes are much easier to maintain and less frequently changed. Such classes are more usable than others as they are designed with a well-focused purpose. 
+
+  Firstly we observed that there tends to be a higher *Lack of Cohesion* for classes with greater number of methods. This is natural since then the funcitonality of the class isn't contained in a concise manner and the code readability decreases. However here, there was another metric that was to be taken care of. In order to decrease the *Cyclomatic Complexity* we split the rather huge functions into smaller simpler chunks (downside : increased number of methods). Hence we carefully noted the values of the metric and decided which one to choose over the other. 
+  
+  In cases where the cyclomatic complexity was too high (most of the times), we resorted to increasing the methods. In cases where the value for cohesion was dropping below a point, we decided to get rid of some redundant functions that weren't suited in the respective classes. Detailed examples for this cam be found in the previous section about CODE SMELLS.
+
+
+* **Separation of concerns**:
+
+  The idea behind this metric is that a software system must be decomposed into parts that overlap in functionality as little as possible. The main reason for creating numerous classes is that each class can encapsulte a particular fucntionality and can be responsible for all the tasks related to that. Following OOPs principles we paid special ephasis to modularize our code using encapsulation and inheritance. 
+
+  We used the existing classes and created new ones that inherited methods and attributes from the *Parent/God classes*.
+  Furthermore, we also introduced modularity in functions of the various classes by splitting them into smaller modules and invoking them from the main function. This also helped improve our cyclomatic complexity for many functions. Eg: ```actionsPerformed``` function in the ```AddPartyView``` class. 
+
+* **Information hiding**
+
+  Data Abstraction or Information hidign is one of the key techniques in OOPs. Most of the attributes in the existing classes were already private members of the class. Continuing this, we ensured that we incorporate attributes with the private visability in most cases. We used public variables only when requried. Lastly, all the functions we declared were public to ensure that they can be accessed by the objects of the class.
+
+* **The Law of Demeter**
+
+  Demeter's Law is an extension of the principle of low coupling and high cohesion. We ensured that this law is obeyed by making fewer classes interact with each other and allowing classes to interact with objects of only immidiate neighbour classes (based on Demeter's rule)
+
+* **Extensibility**
+  
+  Since we ensured low coupling, we made sure that it was easier to introduce new modules, for example a new implementation for an existing interface. The new features that we were asked to implement were easily done without needing to change much code from existing files.
+  As a consequence of high cohesion, it was easier to implement new modules without being concerned with aspects that are not directly related to their functionality. For eg: the module to search the db was easily implemented.
+
+* **Reusability** 
+
+  On inspecting the code we noticed that some features are similar to the new features that are expected to be implemented. For Eg: the *pause/resume* feature is much like the maintenance call feature that causes the Lane to freeze until a button is clicked. Reusing this code and the methods associated with it, we recreated the new functionality. 
+
+
+
+
+# **X. METRIC ANALYSIS**
 
 The following questions have been answered in this section : 
 
@@ -300,7 +379,11 @@ The following questions have been answered in this section :
 * Use smaller methods.
 
 #### 1.3  Refactoring affect metrics
-TODO
+![uml-class-1](/home/mallika/Pictures/imgs/complane.png)
+![uml-class-1](/home/mallika/Pictures/imgs/complaneview.png)
+![uml-class-1](/home/mallika/Pictures/imgs/complanesview.png)
+![uml-class-1](/home/mallika/Pictures/imgs/compapv.png)
+
 
 --------------------------
 
@@ -317,9 +400,6 @@ TODO
 #### 2.2 Guide our refactoring
 * We can pass an object instead of high number of parameters.
 * We can split the method if the number of parameters can be partioned well with the resulting methods.
-
-#### 2.3  Refactoring affect metrics
-TODO
 
 --------------------------
 
@@ -339,7 +419,8 @@ TODO
 * Put deeper blocks into meaningful functions.
 
 #### 3.3  Refactoring affect metrics
-TODO
+![uml-class-1](/home/mallika/Pictures/imgs/lanenes.png)
+
 
 --------------------------
 
@@ -363,7 +444,11 @@ TODO
 * Split up method into simpler components.
 
 #### 4.3  Refactoring affect metrics
-TODO
+
+![uml-class-1](/home/mallika/Pictures/imgs/lacklaneview.png)
+![uml-class-1](/home/mallika/Pictures/imgs/lacknpv.png)
+![uml-class-1](/home/mallika/Pictures/imgs/lacklane.png)
+
 
 --------------------------
 
@@ -382,7 +467,9 @@ TODO
 * If metric constrains are not met, then split funciton into smaller functions.
 
 #### 5.3  Refactoring affect metrics
-TODO
+
+Strength of the Metric is retained.
+
 
 --------------------------
 
@@ -403,7 +490,9 @@ TODO
 * If metric constrains are not met, then split funciton into smaller functions.
 
 #### 6.3  Refactoring affect metrics
-TODO
+
+Strength of the Metric is retained.
+
 
 --------------------------
 
@@ -415,7 +504,7 @@ TODO
 	1. Lane - 17
 	2. LaneEvent - 11
 	3. ControlDesk - 11
-	3. LaneEventInterface - 9
+	4. LaneEventInterface - 9
 * Inference
 	1. Lane has the highest number of methods per class and should be reduced
 	2. LaneEvent has high number of methods due to getters and setters and hence can be ignored.
@@ -428,7 +517,19 @@ TODO
 * Remove dead code and unused methods.
 
 #### 7.3  Refactoring affect metrics
-TODO
+
+* Successful File eg : 
+
+Decreased number of methods by 4
+![uml-class-1](/home/mallika/Pictures/imgs/nomcontrol.png)
+
+* Unsuccesfull File eg :
+
+Increase in numeber of methods by 1
+![uml-class-1](/home/mallika/Pictures/imgs/nomlane.png)
+
+
+For the unsuccessful files however, we managed to better a different metric and hence gave in on the number of methods in this case.
 
 --------------------------
 
@@ -446,4 +547,5 @@ TODO
 * If metric constrains are not met, then split package into smaller packages.
 
 #### 8.3  Refactoring affect metrics
-TODO
+
+In order to include the newer implementations and functionalities, there was no option but to include new classes. Hence this metric was compromised.
