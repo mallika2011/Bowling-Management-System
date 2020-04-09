@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="148.0">LaneEvent</node>
+    <node x="0.0" y="0.0">LaneStatusView</node>
+    <node x="0.0" y="74.0">LaneSubscribe</node>
+    <node x="156.0" y="148.0">Lane</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="459.0" y="198.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

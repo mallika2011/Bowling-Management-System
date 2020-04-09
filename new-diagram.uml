@@ -2,12 +2,50 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="19.0" y="0.0">ControlDeskEvent</node>
+    <node x="0.0" y="79.0">ControlDesk</node>
+    <node x="199.0" y="79.0">SearchableView</node>
+    <node x="59.0" y="158.0">ControlDeskView</node>
+    <node x="199.0" y="0.0">SearchDatabase</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
-  <SelectedNodes />
+  <edges>
+    <edge source="SearchableView" target="SearchDatabase">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ControlDeskView" target="ControlDeskEvent">
+      <point x="0.0" y="-14.5" />
+      <point x="135.5" y="54.0" />
+      <point x="139.0" y="54.0" />
+      <point x="40.0" y="14.5" />
+    </edge>
+    <edge source="ControlDeskView" target="SearchableView">
+      <point x="61.19999999999999" y="-14.5" />
+      <point x="196.7" y="138.0" />
+      <point x="308.5" y="138.0" />
+      <point x="36.5" y="14.5" />
+    </edge>
+    <edge source="ControlDeskView" target="ControlDesk">
+      <point x="-30.599999999999966" y="-14.5" />
+      <point x="104.90000000000003" y="138.0" />
+      <point x="93.75" y="138.0" />
+      <point x="31.25" y="14.5" />
+    </edge>
+    <edge source="ControlDesk" target="ControlDeskEvent">
+      <point x="0.0" y="-14.5" />
+      <point x="62.5" y="54.0" />
+      <point x="59.0" y="54.0" />
+      <point x="-40.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="464.0" y="228.0" />
+  <SelectedNodes>
+    <node>SearchDatabase</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
 </Diagram>
 
