@@ -172,7 +172,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		}
 	}
 	public void newPatronAction(){
-		NewPatronView newPatron = new NewPatronView(party, partyList,allBowlers);
+		NewPatronView newPatron = new NewPatronView(this);
 
 	}
 	public void finishedAction(){
@@ -214,39 +214,39 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		}
 	}
 
-///**
-// * Accessor for Party
-// */
-//
-//	public Vector getNames() {
-//		return party;
-//	}
-//
-/**
- * Called by NewPatronView to notify AddPartyView to update
- *
- * @param newPatron the NewPatronView that called this method
- */
+	/**
+	 * Accessor for Party
+	 */
 
-//	public void updateNewPatron(NewPatronView newPatron) {
-//		try {
-//			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
-//			if ( checkBowler == null ) {
-//				BowlerFile.putBowlerInfo(
-//					newPatron.getNick(),
-//					newPatron.getFull(),
-//					newPatron.getEmail());
-//				bowlerdb = new Vector(BowlerFile.getBowlers());
-//				allBowlers.setListData(bowlerdb);
-//				party.add(newPatron.getNick());
-//				partyList.setListData(party);
-//			} else {
-//				System.err.println( "A Bowler with that name already exists." );
-//			}
-//		} catch (Exception e2) {
-//			System.err.println("File I/O Error");
-//		}
-//	}
+	public Vector getNames() {
+		return party;
+	}
+
+	/**
+	 * Called by NewPatronView to notify AddPartyView to update
+	 *
+	 * @param newPatron the NewPatronView that called this method
+	 */
+
+	public void updateNewPatron(NewPatronView newPatron) {
+		try {
+			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
+			if ( checkBowler == null ) {
+				BowlerFile.putBowlerInfo(
+						newPatron.getNick(),
+						newPatron.getFull(),
+						newPatron.getEmail());
+				bowlerdb = new Vector(BowlerFile.getBowlers());
+				allBowlers.setListData(bowlerdb);
+				party.add(newPatron.getNick());
+				partyList.setListData(party);
+			} else {
+				System.err.println( "A Bowler with that name already exists." );
+			}
+		} catch (Exception e2) {
+			System.err.println("File I/O Error");
+		}
+	}
 
 	/**
 	 * Accessor for Party
@@ -255,4 +255,5 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 	public Vector getParty() {
 		return party;
 	}
+
 }

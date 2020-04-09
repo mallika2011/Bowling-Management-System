@@ -27,31 +27,23 @@ import java.text.*;
 
 public class NewPatronView implements ActionListener {
 
-	private int maxSize;
+//	private int maxSize;
 
 	private JFrame win;
 	private JButton abort, finished;
 	private JLabel nickLabel, fullLabel, emailLabel;
 	private JTextField nickField, fullField, emailField;
 	private String nick, full, email;
-	private JList partyList, allBowlers;
-	private Vector party, bowlerdb;
 
 	private boolean done;
 
-	private String selectedNick, selectedMember;
-//	private AddPartyView addParty;
+//	private String selectedNick, selectedMember;
+	private AddPartyView addParty;
 
-	public NewPatronView(Vector party, JList partyList, JList allBowlers) {
+	public NewPatronView(AddPartyView v) {
 
-//		addParty=v;
+		addParty=v;
 		done = false;
-//		party = v.getParty();
-//		partyList=v.getPartyList();
-//		allBowlers=v.getAllBowlers();
-		this.partyList=partyList;
-		this.party=party;
-		this.allBowlers=allBowlers;
 
 		win = new JFrame("Add Patron");
 		win.getContentPane().setLayout(new BorderLayout());
@@ -139,15 +131,15 @@ public class NewPatronView implements ActionListener {
 			full = fullField.getText();
 			email = emailField.getText();
 			done = true;
-			updateNewPatron();
+			addParty.updateNewPatron( this );
 			win.hide();
 		}
 
 	}
-
-	public boolean done() {
-		return done;
-	}
+//
+//	public boolean done() {
+//		return done;
+//	}
 
 	public String getNick() {
 		return nick;
@@ -159,26 +151,6 @@ public class NewPatronView implements ActionListener {
 
 	public String getEmail() {
 		return email;
-	}
-
-	public void updateNewPatron() {
-		try {
-			Bowler checkBowler = BowlerFile.getBowlerInfo( nick );
-			if ( checkBowler == null ) {
-				BowlerFile.putBowlerInfo(
-						nick,
-						full,
-						email);
-				bowlerdb = new Vector(BowlerFile.getBowlers());
-				allBowlers.setListData(bowlerdb);
-				party.add(nick);
-				partyList.setListData(party);
-			} else {
-				System.err.println( "A Bowler with that name already exists." );
-			}
-		} catch (Exception e2) {
-			System.err.println("File I/O Error");
-		}
 	}
 
 }
