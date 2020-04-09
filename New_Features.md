@@ -96,25 +96,25 @@ The logic we have used to implement this is :
 
 * It is essentially storing a snapshot of the events of that lane into a file. 
 
-* This can then be reloaded for later party's to play/restart the game.
+
 
 
 ## **UML AND SEQ DIAGRAMS FOR NEW FEATURES:**
 
 
+### ***FEATURE 1:* Making code extensible for a Maximum of 6 players :**
+
+![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Feature1_Seq_diagram.jpg)
+
+
 ### ***FEATURE 2:* Searching the Database :**
 
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/db-search.png)
-
+![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Feature2_Seq_diagram.jpg)
 
 ### ***FEATURE 3:* Pause and Resume :**
 
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/pause-play.png)
-
-
-### ***FEATURE 4:* Saving an Existing Party's Game :**
-
-![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Seq_diagram_after.png)
 
 
 
