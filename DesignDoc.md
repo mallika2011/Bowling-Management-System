@@ -282,6 +282,9 @@ Below is an analysis of the design of the original code :
 
 # **VIII. CODE SMELLS**
 
+The Bowling Management System codebase is comprised of a total of 29 files. 
+*Here is a list of those files and the code smells found in them:*
+
 |SNo.| File/Class Name | Code Smells and their instances |
 |----|-----|----------------|
 |1.| AddPartyView | <ol><li>Conditional Complexity<ul><li>The *void actionPerformed(ActionEvent e)* function has high conditional complexity due to the high number of action events possible within the class.</li></ul></li><li>Feature Envy:One of the functions makes extensive use of the *NewPatron* class and hence it should be moved there:<ul><li>*updateNewPatron*</li></ul></li><li>Primitive Obsession & Combinatiorial Explosion:The *JButton* objects are initialized multiple times in this class for various uses. This causes the same code to be written multiple times. Instead a class should be created for this like how it's done for queues using the *Queue* class:<ul><li>*addPatron*</li><li>*remPatron*</li><li>*newPatron*</li><li>*finished*</li></ul></li></ol>|
