@@ -49,4 +49,9 @@ public class Party {
 		return myBowlers;
     }
 
+	/**
+	 * @return Count of the number of bowlers in this party
+	 */
+	public int getPartySize() { return myBowlers.size(); }
+
 }
