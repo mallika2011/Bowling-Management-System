@@ -190,12 +190,12 @@ The diagram follows a *KEY* that represents the changes and modifications that w
 
 **B. Fucntionality : Simulating a Ballthrow and observing corresponding changes in the Score and PinsetterView**
 
-![newuml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram2.png)
+![newuml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/New-UML-Diagram2.png)
 
 
 **C. Fucntionality : Scoring the game and maintaing a queue of the various parties**
 
-![newuml-class-3](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram3.png)
+![newuml-class-3](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/New-UML-Diagram3.png)
 
 
 
@@ -207,7 +207,7 @@ Below are the sequence diagrams that depict the flow of the various functionalit
 ![uml-seq-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
 
 **AFTER REFACTORING**
-![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
+![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Seq_diagram_after.png)
 
 
 # **VI. SUMMARY OF RESPONSIBILITIES OF EACH MAJOR CLASS** : 
