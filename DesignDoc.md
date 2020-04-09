@@ -1,4 +1,4 @@
-# I) BOWLING MANAGEMENT SYSTEM - DESIGN DOCUMENT :
+# I. BOWLING MANAGEMENT SYSTEM - DESIGN DOCUMENT :
 
 Title information, including the name of the project, the date of
 submission, a list of all the team members, effort (number of hours)
@@ -15,7 +15,7 @@ put in by each team member, role played by each team member.
 |2.|Aryaman Jain|1234| <ul><li>Refactoring to reduce cyclometric complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries</li><ul>|
 |3.|E Nikhil|1234| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume and save/quit feature</li><ul>|
 
-# II) BRIEF OVERVIEW :
+# II. BRIEF OVERVIEW :
 
 The Bowling Management System is a game that is entirely developed in Java. It is a virtual game that enables players to enjoy the fun of bowling from their laptops. The game similates several features that add to the overall appeal of the game. Some of the significant features included in the game are : 
 
@@ -31,7 +31,7 @@ The Bowling Management System is a game that is entirely developed in Java. It i
 
 * Maintenance Call : This is essentially a simulation of some repair work  – ball not returned, pinsetter did not re-rack, etc.– that is to take place for a particular lane. The game play is halted for the time the lane is being repaired. 
  
-# III) UML CLASS DIAGRAMS :
+# III. UML CLASS DIAGRAMS (Before Refactoring) :
 
 Below are UML diagrams describing some of the major functionalities of the game.
 
@@ -167,7 +167,39 @@ The several arrows in the diagram represent different relationships between the 
 
 
 
-# IV) SEQUENCE DIAGRAMS : 
+
+
+# IV. UML CLASS DIAGRAMS (After refactoring)
+
+Below are UML diagrams describing the same major functionalities of the game mentioned in the previous section.
+
+The diagram follows a *KEY* that represents the changes and modifications that were done while refactoring and thus resulted in the new UML Diagrams.
+
+**KEY**:
+
+* *New classes introduced:* These are represented by a **green** coloured class
+* *New attributes/methods introduced:* These are represented by **bold and italics black text**
+* *Methods or attributes eliminated:* These are represented by **red text**
+* *New Associations or relations among classes:* These are represented by **blue arrows**
+
+**A. Functionality : This UML diagram represents the functionality of creating a new party for a game and assigning a particular lane for the same. The bowlers can be chosen from an existing list or a NewPatron can be added**
+
+![newuml-class-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/New-UML-Diagram1.png)
+
+
+
+**B. Fucntionality : Simulating a Ballthrow and observing corresponding changes in the Score and PinsetterView**
+
+![newuml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram2.png)
+
+
+**C. Fucntionality : Scoring the game and maintaing a queue of the various parties**
+
+![newuml-class-3](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram3.png)
+
+
+
+# V. SEQUENCE DIAGRAMS : 
 
 Below are the sequence diagrams that depict the flow of the various functionalities incorporated into the game. The sequence diagrams have been drawn for both the *original* and the *refactored* code and hence have subtle differences in their major control flow. 
 
@@ -178,7 +210,7 @@ Below are the sequence diagrams that depict the flow of the various functionalit
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
 
 
-# V) SUMMARY OF RESPONSIBILITIES OF EACH MAJOR CLASS : 
+# VI. SUMMARY OF RESPONSIBILITIES OF EACH MAJOR CLASS : 
 
 The Bowling Management System codebase has a collection of a total of 29 files. Each file has a collection of classes and funcitons that help simulate the entire game.
 *Here is a list of all the files and their corresponding characteristics:*
@@ -215,13 +247,13 @@ The Bowling Management System codebase has a collection of a total of 29 files. 
 |28.| ScoreHistoryFile | <ul><li>Vector getScores(string nick)</li><li>void addScore()</li></ul> | <ul><li>String SCOREHISTORY_DAT</li></ul>  |<ul><li>Writes the scores of the playes into a .DAT file after a game finishes. Makes use of I/O options, reading/writing to a buffer etc</li></ul> |<ul><li>------</li></ul> |
 |29.| ScoreReport | <ul><li>void sendEmail()</li><li>void sendPrintout()</li><li>void sendln()</li></ul> | <ul><li>String content</li></ul>  |<ul><li>Generates the ScoreReport and sends it via email/printout to the user.</li></ul> |<ul><li>Bowler</li></ul> |
 
-# VI) ANALYZING THE ORIGINAL DESIGN :
+# VII. ANALYZING THE ORIGINAL DESIGN :
 
-# VII) CODE SMELLS
+# VIII. CODE SMELLS
 
-# VIII) ANALYZING THE REFACTORED DESIGN
+# IX. ANALYZING THE REFACTORED DESIGN
 
-# IX) METRIC ANALYSIS
+# X. METRIC ANALYSIS
 
 The following questions have been answered in this section : 
 
