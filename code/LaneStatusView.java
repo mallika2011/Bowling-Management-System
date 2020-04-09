@@ -18,7 +18,7 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 
 	private JLabel curBowler, foul, pinsDown;
 	private JButton viewLane;
-	private JButton viewPinSetter, maintenance, pause;
+	private JButton viewPinSetter, maintenance, pause, saveAndQuit;
 
 	private PinSetterView psv;
 	private LaneView lv;
@@ -78,6 +78,12 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 		pause.addActionListener(this);
 		pausePanel.add(pause);
 
+		saveAndQuit = new JButton("saveAndQuit");
+		JPanel saveAndQuitPanel = new JPanel();
+		saveAndQuitPanel.setLayout(new FlowLayout());
+		saveAndQuit.addActionListener(this);
+		saveAndQuitPanel.add(saveAndQuit);
+
 		maintenance = new JButton("     ");
 		maintenance.setBackground( Color.GREEN );
 		JPanel maintenancePanel = new JPanel();
@@ -88,11 +94,13 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 		viewLane.setEnabled( false );
 		viewPinSetter.setEnabled( false );
 		pause.setEnabled( false );
+		saveAndQuit.setEnabled(false);
 
 
 		buttonPanel.add(viewLanePanel);
 		buttonPanel.add(viewPinSetterPanel);
 		buttonPanel.add(pausePanel);
+		buttonPanel.add(saveAndQuitPanel);
 		buttonPanel.add(maintenancePanel);
 
 		jp.add( cLabel );
@@ -146,6 +154,13 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 					lane.pauseGame();
 				}
 			}
+			if (e.getSource().equals(saveAndQuit)) {
+				if (paused) {
+					String filename = "test";
+					lane.saveAndQuit(filename);
+				}
+			}
+
 			if (e.getSource().equals(maintenance)) {
 				lane.unPauseGame();
 				maintenance.setBackground( Color.GREEN );
@@ -162,10 +177,12 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 			viewLane.setEnabled( false );
 			viewPinSetter.setEnabled( false );
 			pause.setEnabled( false );
+			saveAndQuit.setEnabled( false );
 		} else {
 			viewLane.setEnabled( true );
 			viewPinSetter.setEnabled( true );
 			pause.setEnabled( true );
+			saveAndQuit.setEnabled ( true );
 		}
 	}
 
