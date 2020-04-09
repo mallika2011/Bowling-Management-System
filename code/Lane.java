@@ -584,46 +584,6 @@ public class Lane extends Thread implements PinsetterObserver, Serializable {
 	public void pauseGame() {
 		gameIsHalted = true;
 		laneSubscribe.publish(lanePublish());
-
-		String filename = "pausedGame.dat";
-		try {
-			// Read list from file
-			FileInputStream filei = new FileInputStream(filename); 
-			ObjectInputStream in = new ObjectInputStream(filei);
-			List<Lane> list = (ArrayList<Lane>) in.readObject();
-			in.close(); 
-            filei.close(); 
-			
-			// Add this lane to file
-			list.add(this);
-
-			// Write list to file
-			FileOutputStream fileo = new FileOutputStream(filename);
-			ObjectOutputStream out = new ObjectOutputStream(fileo);
-			out.writeObject(list);
-			out.close();
-			fileo.close();
-		}
-		catch (IOException ex) { 
-			try {
-				List<Lane> list = new ArrayList<Lane>();
-				list.add(this);
-
-				// Write list to file
-				FileOutputStream file = new FileOutputStream(filename);
-				ObjectOutputStream out = new ObjectOutputStream(file);
-				out.writeObject(list);
-				out.close();
-				file.close();
-			}
-			catch (Exception e) {
-
-			}
-		}
-		catch (Exception e) {
-			System.out.println(e);
-		}
-
 	}
 
 	/**
@@ -634,4 +594,40 @@ public class Lane extends Thread implements PinsetterObserver, Serializable {
 		laneSubscribe.publish(lanePublish());
 	}
 
+
+	public void saveAndQuit(String filename) {
+		
+		if (gameIsHalted == false) {
+			return;
+		}
+
+		try {
+			FileOutputStream file = new FileOutputStream (filename); 
+			ObjectOutputStream out = new ObjectOutputStream (file); 
+
+			// Method for serialization of object 
+			out.writeObject(this); 
+
+			out.close(); 
+			file.close();
+		} 
+
+		catch (IOException ex) { 
+			System.out.println("IOException is caught" + ex); 
+		} 
+		
+		catch (Exception e) {
+			System.out.println("Exception is caught" + e); 	
+		}
+		
+		resetScores();
+		resetBowlerIterator();
+		partyAssigned = false;
+		party = null;
+		partyAssigned = false;
+
+	}
+
+
 }
+
