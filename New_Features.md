@@ -115,6 +115,7 @@ The logic we have used to implement this is :
 ### ***FEATURE 3:* Pause and Resume :**
 
 ![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/pause-play.png)
+![umL-seq-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/Feature3_Seq_diagram.jpg)
 
 
 

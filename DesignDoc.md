@@ -5,11 +5,11 @@
 
 **Team Members :**
 
-|SNo.| Team Member | Hours of Work | Contributions  |
+|SNo.| Team Member | Hours of Work/day | Contributions  |
 |------------|------------|------------|------------|
-|1.|Mallika Subramanian|1234| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Increasing cohesion amongst classes and methods</li><li>Analysing and identifying responsibilites of major classes as well as the interlinked classes.</li><li>Creating UML class and sequence diagrams for the original as well as refactored code</li><ul>|
-|2.|Aryaman Jain|1234| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries and the save-quit and restart feature.</li><ul>|
-|3.|E Nikhil|1234| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume</li><li>Creating Sequence diagrams</li><ul>|
+|1.|Mallika Subramanian|15| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Increasing cohesion amongst classes and methods</li><li>Analysing and identifying responsibilites of major classes as well as the interlinked classes.</li><li>Creating UML class and sequence diagrams for the original as well as refactored code</li><ul>|
+|2.|Aryamaan Jain|15| <ul><li>Refactoring to reduce cyclomatic complexity</li> <li>Reducing number of methods per class</li><li>Understanding the metrics to be measured and documenting potential changes that can be made to improve them</li><li>Implementing the Database layer for ad-hoc queries and the save-quit and restart feature.</li><ul>|
+|3.|E Nikhil|15| <ul><li>Identifying the critical code smells in the code</li> <li>Refactoring to get rid of redundant code</li><li>Implementing the pause/resume</li><li>Creating Sequence diagrams</li><ul>|
 
 # **II. BRIEF OVERVIEW** :
 
