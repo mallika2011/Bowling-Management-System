@@ -65,28 +65,28 @@ There are several relationships exhibited by the different member classes that m
 
 * The cardinalities - *number of participating objects in any association between two classes* - are also mentioned on the relationship arrows of the classes.
 
-* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The ```create``` written above the arrows indicates the parent-child relationship.
+* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The <span style="color:blue; font-family:'Courier New'; font-weight:bold">create</span> written above the arrows indicates the parent-child relationship.
 
-* The ```ControlDeskObserver``` class is an interface class. Essentially serves as an interface between two or more classes that may not be able to interact otherwise. For eg: the ```ControlDeskView``` and ```ControlDeskEvent``` classes are interfaced to be able to share infromation and perform functions. This is also a demonstration of the *Adapter Design Pattern* 
+* The <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskObserver</span> class is an interface class. Essentially serves as an interface between two or more classes that may not be able to interact otherwise. For eg: the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskEvent</span> classes are interfaced to be able to share infromation and perform functions. This is also a demonstration of the *Adapter Design Pattern* 
 
-* The ```drive``` class is the driver module for the game to begin. It is linked to the ```ControlDesk``` class that carries out all the functions to control the game. 
+* The <span style="color:blue; font-family:'Courier New'; font-weight:bold">drive</span> class is the driver module for the game to begin. It is linked to the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> class that carries out all the functions to control the game. 
 
 * All the methods and attributes associated with each class are shown in the UML class diagram as well. The private attributes and methods are represented by **-** and the public ones are represented by **+**.
 
 The several arrows in the diagram represent different relationships between the multiple classes. 
 
 - **Associations and Dependencies** : 
-    - ```AddPartyView``` and ```Bowler``` class are also related via association. The ```AddPartyView``` class has a list of all the Bowlers and hence depends on the Bowler class in order to obtain the Names and Nicknames of the bowlers. 
-    - The ```ControlDesk``` and ```ControlDeskView``` classes are associated as the ```ControlDeskView``` class uses an object of the ```ControlDesk``` class.
-    - ```AddPartyView``` and ```NewPatronView``` are also associated in a similar manner
-    - ```ControlDeskView``` and ```AddPartyView``` also have an association relation
+    - <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">Bowler</span> class are also related via association. The <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class has a list of all the Bowlers and hence depends on the Bowler class in order to obtain the Names and Nicknames of the bowlers. 
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskView</span> classes are associated as the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskView</span> class uses an object of the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> class.
+    - <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">NewPatronView</span> are also associated in a similar manner
+    - <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> also have an association relation
 
 - **Compositions**: 
-    - The ```NewPatronView``` class composes the ```AddPartyView``` class since a major functionality supported by the ```AddPartyView``` class is the add a patron to the list of already existing bolwers.
-    - The ```AddPartyView``` class composes the ```ControlDeskView``` since the main purpose or functionality of the ```ControlDesk```is to enable the players to add/create a party with a set of members/patrons and play the game. This is done via the ```AddPartyView``` class's members and methods. 
-    - The ```ControlDeskiew``` class inturn composes the control desk class since without the View provided by the GUI there would be no interface to support the ```ControlDesk```class. 
-    - The ```Bowler``` object is a *composition* of the lane class indicating that if there exists an objec of the ```Bowler``` class then it must definitely belong to some ```Lane``` object and cannot exist alone. There exists a *1:n* cardinality indicating that for a particular ```Lane``` there can be multiple ```Bowlers``` associated to it and a ```Bowler``` can be associated to only 1 lane.
-    - For ```Alley``` and ```ControlDesk``` classes, if there exists an object of the ```ControlDesk``` then it must have at least one object of ```Alley``` linked to it. It cannot exists standalone, hence the compostion relationship.
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">NewPatronView</span> class composes the <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class since a major functionality supported by the <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class is the add a patron to the list of already existing bolwers.
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class composes the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskView</span> since the main purpose or functionality of the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span>is to enable the players to add/create a party with a set of members/patrons and play the game. This is done via the <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class's members and methods. 
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDeskiew</span> class inturn composes the control desk class since without the View provided by the GUI there would be no interface to support the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span>class. 
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">Bowler</span> object is a *composition* of the lane class indicating that if there exists an objec of the <span style="color:blue; font-family:'Courier New'; font-weight:bold">Bowler</span> class then it must definitely belong to some <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane</span> object and cannot exist alone. There exists a *1:n* cardinality indicating that for a particular <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane</span> there can be multiple <span style="color:blue; font-family:'Courier New'; font-weight:bold">Bowlers</span> associated to it and a <span style="color:blue; font-family:'Courier New'; font-weight:bold">Bowler</span> can be associated to only 1 lane.
+    - For <span style="color:blue; font-family:'Courier New'; font-weight:bold">Alley</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> classes, if there exists an object of the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> then it must have at least one object of <span style="color:blue; font-family:'Courier New'; font-weight:bold">Alley</span> linked to it. It cannot exists standalone, hence the compostion relationship.
 
 
 ![uml-class-1](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram1.png)
@@ -111,22 +111,22 @@ The several arrows in the diagram represent different relationships between the 
 
 * The cardinalities - *number of participating objects in any association between two classes* - are mentioned on the relationship arrows of the classes.
 
-* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The ```create``` written above the arrows indicates the parent-child relationship.
+* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The <span style="color:blue; font-family:'Courier New'; font-weight:bold">create</span> written above the arrows indicates the parent-child relationship.
 
-* The ```PinsetterObserver```, ```LaneObserver```, ```LaneEventInterface``` classes are an interface class. Essentially serves as an interface between two or more classes that may not be able to interact otherwise. For eg: the ```PinSetterView``` and ```Pinsetter``` classes are interfaced to be able to share infromation and perform functions. Also, the ```LaneStatusView``` and ```LaneView``` are interfaced with ```LaneObserver``` to ```LaneEvent```. This is also a demonstration of the *Adapter Design Pattern* 
+* The <span style="color:blue; font-family:'Courier New'; font-weight:bold">PinsetterObserver</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneObserver</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneEventInterface</span> classes are an interface class. Essentially serves as an interface between two or more classes that may not be able to interact otherwise. For eg: the <span style="color:blue; font-family:'Courier New'; font-weight:bold">PinSetterView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">Pinsetter</span> classes are interfaced to be able to share infromation and perform functions. Also, the <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneView</span> are interfaced with <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneObserver</span> to <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneEvent</span>. This is also a demonstration of the *Adapter Design Pattern* 
 
 * All the methods and attributes associated with each class are shown in the UML class diagram as well. The private attributes and methods are represented by **-** and the public ones are represented by **+**.
 
 The several arrows in the diagram represent different relationships between the multiple classes. 
 
 - **Associations and Dependencies** : 
-    - ```Pinsetter``` & ```Lane``` and ```PinsetterView``` & ```LaneStatusView```classes are related via an association indicated by a solid arrow that shows that they have objects of these respective classes shared between them.
+    - <span style="color:blue; font-family:'Courier New'; font-weight:bold">Pinsetter</span> & <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">PinsetterView</span> & <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView</span>classes are related via an association indicated by a solid arrow that shows that they have objects of these respective classes shared between them.
     - Dependencies are indicated by dotted arrows and show that a change in the class to which the arrow head points will and can cause a change to the dependent class. 
 
 - **Compositions**: 
-    - The ```LaneView``` and ```Lane``` classes exist only if the ```LaneStatusView ```class object exists. That is the ```LaneStatusView```class composes the remaining classes. This is because, for every Lane there must be a UI view and and status view linked to it. 
-    - The ```LaneStatusView``` class also composes the ```PinsetterView``` class indicating that if there exists a ```PinsetterView``` object then it must be the view of the pins belonging to some ```LaneStatusView``` object. 
-    - Likewise the ```Lane``` class also composes the ```Pinsetter``` class.
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneView</span> and <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane</span> classes exist only if the <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView </span>class object exists. That is the <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView</span>class composes the remaining classes. This is because, for every Lane there must be a UI view and and status view linked to it. 
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView</span> class also composes the <span style="color:blue; font-family:'Courier New'; font-weight:bold">PinsetterView</span> class indicating that if there exists a <span style="color:blue; font-family:'Courier New'; font-weight:bold">PinsetterView</span> object then it must be the view of the pins belonging to some <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView</span> object. 
+    - Likewise the <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane</span> class also composes the <span style="color:blue; font-family:'Courier New'; font-weight:bold">Pinsetter</span> class.
 
 ![uml-class-2](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram2.png)
 
@@ -145,7 +145,7 @@ The several arrows in the diagram represent different relationships between the 
 
 * The cardinalities - *number of participating objects in any association between two classes* - are mentioned on the relationship arrows of the classes.
 
-* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The ```create``` written above the arrows indicates the parent-child relationship.
+* To further indicate the creation of classes, it has also been specified as to which class is create from which parent class. The <span style="color:blue; font-family:'Courier New'; font-weight:bold">create</span> written above the arrows indicates the parent-child relationship.
 
 * This UML class diagram unlike the previous two shows two disjoint sets of classes. However in order to successfully implement this functionality, all these classes are required. 
 
@@ -154,10 +154,10 @@ The several arrows in the diagram represent different relationships between the 
 The several arrows in the diagram represent different relationships between the multiple classes. 
 
 - **Associations and Dependencies** : 
-    - ```Score``` & ```ScoreHistoryFile```, ```Score``` & ```ScoreReport```, ```ScoreReport``` & ```ScoreHistoryFile``` are all related via a dependency indicated by a dotted arrow that shows that they have objects of these respective classes shared between them.
+    - <span style="color:blue; font-family:'Courier New'; font-weight:bold">Score</span> & <span style="color:blue; font-family:'Courier New'; font-weight:bold">ScoreHistoryFile</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">Score</span> & <span style="color:blue; font-family:'Courier New'; font-weight:bold">ScoreReport</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">ScoreReport</span> & <span style="color:blue; font-family:'Courier New'; font-weight:bold">ScoreHistoryFile</span> are all related via a dependency indicated by a dotted arrow that shows that they have objects of these respective classes shared between them.
 
 - **Compositions**: 
-    - The ```ControlDesk``` class composes the ```Queue``` class indicating that if there exists a ```Queue``` object comprising the list of all the parties in the queue, then it must be managed by some ```ControlDesk``` object. 
+    - The <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> class composes the <span style="color:blue; font-family:'Courier New'; font-weight:bold">Queue</span> class indicating that if there exists a <span style="color:blue; font-family:'Courier New'; font-weight:bold">Queue</span> object comprising the list of all the parties in the queue, then it must be managed by some <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> object. 
     
 ![uml-class-3](/home/mallika/Desktop/DASS/Assn/A3/Bowling-Management-System/UML-Diagram3.png)
 
@@ -251,25 +251,25 @@ Below is an analysis of the design of the original code :
 
   * **Comments :** The given code is well commented and enables a new coder to easily understand the codebase. 
 
-  * **Long Method:** Some files such as ```Lane.java``` have functions that and are too long and hence have high cylcomatic complexity. This is a drawback in the design.
+  * **Long Method:** Some files such as <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane.java</span> have functions that and are too long and hence have high cylcomatic complexity. This is a drawback in the design.
 
-  * **Long Parameter List:** The ```LaneEvent.java``` file has a long parameterlist, this is undersirable since it makes the code more complex.
+  * **Long Parameter List:** The <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneEvent.java</span> file has a long parameterlist, this is undersirable since it makes the code more complex.
 
   * **Duplicate Code:** A few functions are redundant, they perform the same tasks and hence one of the redundant methods can be removed. 
 
   * **Inconsisten/Uncommunicative names:** The code makes use of intuitive function names and instance declarations which makes it easier for a person reading the codebase for the first time to navigate through the different files.
 
-  * **Conditional Complexity**: Several files such as ```Lane.java```, ```LaneEvent.java```, ```LaneStatusView.java``` etc have high conditional complexity. These can be improved upon. 
+  * **Conditional Complexity**: Several files such as <span style="color:blue; font-family:'Courier New'; font-weight:bold">Lane.java</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneEvent.java</span>, <span style="color:blue; font-family:'Courier New'; font-weight:bold">LaneStatusView.java</span> etc have high conditional complexity. These can be improved upon. 
 
   * **Speculative generalization and Dead Code:** There exist some chunks of dead code that have been left in the codebase with the intention to complete them later. These add to the LOC, and make the code less readable. Hence it is best to remove them.
 
 * **Design Analysis *Between* Classes**
 
-  * **Indecent Exposure:** Classes like the ```ControlDesk``` are subject to this codesmell wherein they have functions that expose themselves to the class where they arent even required. 
+  * **Indecent Exposure:** Classes like the <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> are subject to this codesmell wherein they have functions that expose themselves to the class where they arent even required. 
 
-  * **Feature Envy:** Certain methods from ```ControlDesk``` can be moved into other classes wherein they are more extensively used. For Eg: the Queue related functions can be moved to the ```Queue.java``` file.
+  * **Feature Envy:** Certain methods from <span style="color:blue; font-family:'Courier New'; font-weight:bold">ControlDesk</span> can be moved into other classes wherein they are more extensively used. For Eg: the Queue related functions can be moved to the <span style="color:blue; font-family:'Courier New'; font-weight:bold">Queue.java</span> file.
 
-  * **Primitive Obsession:** Objects and datatypes such as the ```JButton``` are written and rewritten again and again. This causes it to become extremely complex. This can be fixed by writing a class for the same.
+  * **Primitive Obsession:** Objects and datatypes such as the <span style="color:blue; font-family:'Courier New'; font-weight:bold">JButton</span> are written and rewritten again and again. This causes it to become extremely complex. This can be fixed by writing a class for the same.
 
 
 
@@ -299,7 +299,7 @@ There were several paramters that we had taken into consideration while we refac
 
   We started off with a total of 29 classes (quite a huge number in iteself). As we went on to increase the functionalities and extend the project, we observed that there were more classes required. Since this was a dire requirement and couldn't be overlooked we had to ensure that the coupling between these class is low. 
   
-  Low coupling is often a sign of a well-structured computer system. Hence the refactored code includes as few dependencies as possible. We trie to keep the newer classes as standalone classes (such that they arent dependent on other classes). Furthermore, the existing dependencies between classes was also lowered. A major factor that is affected when coupling becomes high is the idea of *Data Abstraction*. If classes freely access the members of other classes, then the whole point of data-hiding is lost. Hence we took care of this by shifting those functions to the classes in which they are most suitable from where they were initially placed (Eg : ```updateNewPatron``` was shifted into the ```NewPatronView``` class).
+  Low coupling is often a sign of a well-structured computer system. Hence the refactored code includes as few dependencies as possible. We trie to keep the newer classes as standalone classes (such that they arent dependent on other classes). Furthermore, the existing dependencies between classes was also lowered. A major factor that is affected when coupling becomes high is the idea of *Data Abstraction*. If classes freely access the members of other classes, then the whole point of data-hiding is lost. Hence we took care of this by shifting those functions to the classes in which they are most suitable from where they were initially placed (Eg : <span style="color:blue; font-family:'Courier New'; font-weight:bold">updateNewPatron</span> was shifted into the <span style="color:blue; font-family:'Courier New'; font-weight:bold">NewPatronView</span> class).
 
   Overall we were successfully able to ensure that on an average amongst all our classes, there exists a low value for the **Coupling metric**
 
@@ -317,7 +317,7 @@ There were several paramters that we had taken into consideration while we refac
   The idea behind this metric is that a software system must be decomposed into parts that overlap in functionality as little as possible. The main reason for creating numerous classes is that each class can encapsulte a particular fucntionality and can be responsible for all the tasks related to that. Following OOPs principles we paid special ephasis to modularize our code using encapsulation and inheritance. 
 
   We used the existing classes and created new ones that inherited methods and attributes from the *Parent/God classes*.
-  Furthermore, we also introduced modularity in functions of the various classes by splitting them into smaller modules and invoking them from the main function. This also helped improve our cyclomatic complexity for many functions. Eg: ```actionsPerformed``` function in the ```AddPartyView``` class. 
+  Furthermore, we also introduced modularity in functions of the various classes by splitting them into smaller modules and invoking them from the main function. This also helped improve our cyclomatic complexity for many functions. Eg: <span style="color:blue; font-family:'Courier New'; font-weight:bold">actionsPerformed</span> function in the <span style="color:blue; font-family:'Courier New'; font-weight:bold">AddPartyView</span> class. 
 
 * **Information hiding**
 
